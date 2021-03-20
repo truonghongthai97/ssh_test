@@ -30,11 +30,11 @@ workflows:
     triggers:
       - schedule:
            cron: "0 * * * *"
-           filters:
-             branches:
-               only:
-                 - master
-                 - circleci-project-setup
+          #  filters:
+          #    branches:
+          #      only:
+          #        - master
+          #        - circleci-project-setup
     jobs: # and here we list the jobs we are going to run.
       - building
       - deployment
