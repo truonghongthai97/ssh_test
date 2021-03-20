@@ -11,7 +11,19 @@ jobs:
       - image: cimg/node:14.10.1 # the primary container, where your job's commands are run
     steps:
       - checkout # check out the code in the project directory
-      - run: echo "deployment process" # run the `echo` command
+      - run: sayhello
+
+commands:
+  sayhello:
+    description: "description of 'sayhello command'"
+    parameters:
+      to:
+        type: string
+        default: "SAY HELLO for deloyment process"
+    steps:
+      - run: echo <<parameters.to>>
+
+
 workflows:
   version: 2
   building_and_deployment: # this is the name of our workflow
