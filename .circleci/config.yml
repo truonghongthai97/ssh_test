@@ -29,7 +29,7 @@ workflows:
   building_and_deployment: # this is the name of our workflow
     triggers:
       - schedule:
-           cron: "0 0 * * *"
+           cron: "0 * * * *"
            filters:
              branches:
                only:
