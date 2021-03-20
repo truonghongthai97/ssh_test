@@ -34,6 +34,7 @@ workflows:
              branches:
                only:
                  - master
+                 - circleci-project-setup
     jobs: # and here we list the jobs we are going to run.
       - building
       - deployment
