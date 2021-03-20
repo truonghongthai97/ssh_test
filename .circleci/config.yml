@@ -1,4 +1,15 @@
 version: 2.1
+
+commands:
+  sayhello:
+    description: "description of 'sayhello command'"
+    parameters:
+      to:
+        type: string
+        default: "SAY HELLO for deloyment process"
+    steps:
+      - run: echo <<parameters.to>>
+
 jobs:
   building:
     docker: 
@@ -11,18 +22,7 @@ jobs:
       - image: cimg/node:14.10.1 # the primary container, where your job's commands are run
     steps:
       - checkout # check out the code in the project directory
-      - run: sayhello
-
-commands:
-  sayhello:
-    description: "description of 'sayhello command'"
-    parameters:
-      to:
-        type: string
-        default: "SAY HELLO for deloyment process"
-    steps:
-      - run: echo <<parameters.to>>
-
+      - sayhello 
 
 workflows:
   version: 2
