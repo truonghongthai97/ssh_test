@@ -27,9 +27,9 @@ jobs:
 workflows:
   version: 2
   building_and_deployment: # this is the name of our workflow
-    triggers:
-      - schedule:
-           cron: "0 * * * *"
+    # triggers:
+      # - schedule:
+          #  cron: "0 * * * *"
           #  filters:
           #    branches:
           #      only:
