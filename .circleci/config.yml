@@ -22,11 +22,18 @@ jobs:
       - image: cimg/node:14.10.1 # the primary container, where your job's commands are run
     steps:
       - checkout # check out the code in the project directory
-      - sayhello 
+      - sayhello
 
 workflows:
   version: 2
   building_and_deployment: # this is the name of our workflow
+    triggers:
+      - schedule:
+           cron: "0 0 * * *"
+           filters:
+             branches:
+               only:
+                 - master
     jobs: # and here we list the jobs we are going to run.
       - building
       - deployment
